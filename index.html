@@ -366,6 +366,34 @@
     .price-card li::before { content: "↳"; margin-right: 10px; color: var(--coral); }
     .price-card.featured .btn { background: var(--lime); color: var(--ink); border-color: var(--lime); }
 
+    .horizon { background: var(--sand); }
+    .horizon-head { display: flex; justify-content: space-between; align-items: end; gap: 36px; margin-bottom: 42px; }
+    .horizon-head h2 { margin-bottom: 0; max-width: 760px; }
+    .horizon-head p { max-width: 420px; line-height: 1.65; }
+    .horizon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .horizon-card {
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 26px;
+      border: 1px solid rgba(200,160,99,.42);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .horizon-card::before,
+    .horizon-card::after { content: ""; position: absolute; inset: 0; }
+    .horizon-card::before { background: var(--horizon-image) center/cover; transition: transform .7s ease; }
+    .horizon-card::after { background: linear-gradient(to top, rgba(26,26,26,.82), rgba(26,26,26,.14)); }
+    .horizon-card:hover::before { transform: scale(1.04); }
+    .horizon-card > * { position: relative; z-index: 2; }
+    .horizon-card small { color: var(--gold); text-transform: uppercase; letter-spacing: .18em; font-weight: 600; }
+    .horizon-card h3 { font-size: clamp(2.3rem, 4vw, 3.6rem); margin: 12px 0 10px; }
+    .horizon-card p { margin-bottom: 22px; line-height: 1.55; color: rgba(255,255,255,.82); }
+    .horizon-card .btn { align-self: flex-start; background: rgba(247,244,239,.96); color: var(--ink); border-color: rgba(247,244,239,.96); }
+
     footer { padding: 42px 4vw; background: var(--ink); color: white; }
     .footer-inner { width: min(1180px,100%); margin:auto; display:flex; justify-content:space-between; gap:30px; align-items:center; }
     .footer-inner p { margin: 0; opacity: .7; }
@@ -396,6 +424,8 @@
       .carton-wrap { min-height: 500px; }
       .carton { width: 300px; }
       .numbers-grid, .booking-cards { grid-template-columns: 1fr; }
+      .horizon-grid { grid-template-columns: 1fr; }
+      .horizon-head { display: grid; }
       .day { grid-template-columns: 55px 1fr; }
       .day small { display: none; }
       .booking-head { display: block; }
@@ -568,6 +598,7 @@
     .booking{background:var(--cream);}
     .price-card{border-radius:0;border-color:rgba(200,160,99,.45);background:#fffdf9;}
     .price-card.featured{background:var(--ink);color:var(--cream);border-color:var(--gold);}
+    .horizon{background:#e8dfd2;}
     footer{background:var(--ink);color:var(--cream);border-top:1px solid var(--gold);}
     footer .brand img{background:var(--cream);border-radius:50%;}
     @media(max-width:700px){.brand-logo{width:70px;height:58px}.brand-logo img{width:66px;height:66px}.brand{font-size:.62rem;letter-spacing:.18em;gap:8px}.brand img{width:38px;height:38px}.maya-photo{min-height:520px}.carton-mark{width:108px;height:108px}.hero{background-position:62% center}.hero-copy{background:rgba(247,244,239,.76);padding:18px}.nav-cta{display:none}}
@@ -618,7 +649,7 @@
     .footer-inner{min-height:78px}
     @media(max-width:1180px){.nav-links{gap:22px}.hero{grid-template-columns:1fr minmax(290px,360px)}.hero-side{display:none}.inside-layout{grid-template-columns:1fr}}
     @media(max-width:860px){.nav{padding-inline:4vw}.nav .brand span{max-width:210px;overflow:hidden;text-overflow:ellipsis}.hero{grid-template-columns:1fr}.hero-copy{margin:0 auto;text-align:center}.actions{justify-content:center}.numbers{padding:78px 5vw}.number-card{border-right:0;border-bottom:1px solid rgba(200,160,99,.22)}.number-card:last-child{border-bottom:0}.booking{padding-top:92px}.booking-head{display:grid}}
-    @media(max-width:620px){.nav{position:sticky}.brand img{width:34px;height:34px}.nav .brand span{max-width:160px}.hero{padding-top:74px}.hero-copy{text-align:left;background:rgba(247,244,239,.84);border:1px solid rgba(200,160,99,.28)}.actions{justify-content:stretch}.carton{width:min(286px,86vw)}.carton-top,.cap{display:none}.carton-title span{letter-spacing:.32em}.wow-card,.moment{min-height:330px}.numbers-grid,.booking-cards{grid-template-columns:1fr}.day{grid-template-columns:1fr;gap:8px}.day small{display:block}.booking-head h2{font-size:clamp(3rem,17vw,4.2rem)}.price-card .btn{align-self:stretch}footer .brand span{max-width:none}}
+    @media(max-width:620px){.nav{position:sticky}.brand img{width:34px;height:34px}.nav .brand span{max-width:160px}.hero{padding-top:74px}.hero-copy{text-align:left;background:rgba(247,244,239,.84);border:1px solid rgba(200,160,99,.28)}.actions{justify-content:stretch}.carton{width:min(286px,86vw)}.carton-top,.cap{display:none}.carton-title span{letter-spacing:.32em}.wow-card,.moment{min-height:330px}.numbers-grid,.booking-cards,.horizon-grid{grid-template-columns:1fr}.horizon-card{min-height:340px}.day{grid-template-columns:1fr;gap:8px}.day small{display:block}.booking-head h2{font-size:clamp(3rem,17vw,4.2rem)}.price-card .btn{align-self:stretch}footer .brand span{max-width:none}}
 
   </style>
 </head>
@@ -632,6 +663,7 @@
       <a href="#hosts">Meet the hosts</a>
       <a href="#experience">The experience</a>
       <a href="#itinerary">8 days</a>
+      <a href="#horizon">On the horizon</a>
     </div>
     <a class="nav-cta" href="#reserve">Reserve a place</a>
   </nav>
@@ -701,7 +733,7 @@
           <p class="eyebrow">Your lead host</p>
           <h2>Come to Bali with Maya.</h2>
           <p class="maya-quote">“I mapped every route, chose every location and designed every workout. When you are on the volcano at 5am, I will be right there with you.”</p>
-          <p>Maya built Balance Retreats as an invitation to step away from ordinary life, feel strong again and experience somewhere extraordinary with a very small group.</p>
+          <p>Maya is a fitness coach dedicated to helping women build strength, confidence and balance from the inside out. Her approach blends mindful movement, functional training, nourishing routines and self-care into a retreat experience that feels energising, grounded and sustainable.</p>
           <p class="signature">Maya Abdullah<br><span style="font-weight:400; opacity:.65">Founder, adventure and fitness host</span></p>
         </div>
       </div>
@@ -717,7 +749,7 @@
             <div class="host-copy">
               <p class="eyebrow">Founder and lead host</p>
               <h3>Maya Abdullah</h3>
-              <p>Maya designed the routes, locations and daily training. She is with you throughout the experience, from the first welcome dinner to sunrise above the volcano.</p>
+              <p>Maya is the founder of Balance Retreats and your lead host throughout the week. She designs the routes, locations and daily movement so guests can step away from everyday demands and return feeling stronger, calmer and deeply recharged.</p>
               <a href="https://www.instagram.com/myfitmaya/" target="_blank" rel="noopener noreferrer">@myfitmaya</a>
             </div>
           </article>
@@ -726,15 +758,15 @@
             <div class="host-copy">
               <p class="eyebrow">Retreat support host</p>
               <h3>Emma Knight</h3>
-              <p>Emma helps hold the guest experience with thoughtful support, calm group energy and space for guests to settle into the week at their own pace.</p>
+              <p>Emma supports the guest experience with warmth, structure and calm group energy. She helps guests feel welcomed, settled and cared for throughout the retreat, from shared moments to quiet check-ins.</p>
             </div>
           </article>
           <article class="host-card host-third">
             <div class="host-image" role="img" aria-label="Third Balance Retreats host"></div>
             <div class="host-copy">
-              <p class="eyebrow">Yoga and somatic practices</p>
+              <p class="eyebrow">Yoga, mindfulness and breathwork</p>
               <h3>Viktoria</h3>
-              <p>Viktoria brings yoga, meditation and somatic practice into the retreat, helping guests move with awareness and reconnect with themselves throughout the week.</p>
+              <p>Viktoria guides yoga, mindfulness, breathwork and somatic practice. Her sessions help guests move with awareness, regulate their energy and reconnect with their bodies in a grounded, restorative way.</p>
               <a href="https://instagram.com/viktoria4wellness" target="_blank" rel="noopener noreferrer">@viktoria4wellness</a>
             </div>
           </article>
@@ -765,7 +797,7 @@
           <article class="feature"><b>01</b><div><h3>Train with Maya</h3><p>Daily fitness sessions in places no gym can compete with.</p></div></article>
           <article class="feature"><b>02</b><div><h3>Watch Bali wake up</h3><p>A 3:30am jeep ride to the volcano for sunrise above the clouds.</p></div></article>
           <article class="feature"><b>03</b><div><h3>Swim beneath Sekumpul</h3><p>Travel north to Bali's most spectacular waterfall.</p></div></article>
-          <article class="feature"><b>04</b><div><h3>Make space to breathe</h3><p>A slower afternoon for recovery, journaling, pool time or quiet conversation.</p></div></article>
+          <article class="feature"><b>04</b><div><h3>Make space to breathe</h3><p>Yoga, mindfulness, breathwork and slower time for recovery, journaling, pool time or quiet conversation.</p></div></article>
           <article class="feature"><b>05</b><div><h3>Finish above the ocean</h3><p>Uluwatu cliffs, sunset spa and one final dinner together.</p></div></article>
         </div>
       </div>
@@ -798,8 +830,8 @@
         </div>
         <div class="fun-copy reveal">
           <p class="eyebrow">A serious reset without taking itself too seriously</p>
-          <h2>Yes, you will work on yourself. You will also have a lot of fun.</h2>
-          <p>Expect volcano coffee, music in the car, swims beneath waterfalls, shared dinners, unexpected moments and the kind of inside jokes that only happen when eight people experience something extraordinary together.</p>
+          <h2>Yes, you will reset deeply. You will also have a lot of fun.</h2>
+          <p>Expect volcano coffee, music in the car, swims beneath waterfalls, shared dinners, breathwork, mindful movement, unexpected moments and the kind of inside jokes that only happen when eight people experience something extraordinary together.</p>
         </div>
       </div>
     </section>
@@ -812,6 +844,38 @@
           <article class="moment"><img src="https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?w=1000&q=92" alt="Bali waterfall surrounded by tropical greenery"><span>Swim beneath the waterfall</span></article>
           <article class="moment"><img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1000&q=92" alt="Sunrise above Bali mountains and jungle"><span>Watch Bali wake up</span></article>
           <article class="moment"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1000&q=92" alt="Bali temple at golden hour"><span>Experience places you never forget</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="horizon" id="horizon">
+      <div class="container">
+        <div class="horizon-head reveal">
+          <div>
+            <p class="eyebrow">On the horizon</p>
+            <h2>More Balance Retreats are already taking shape.</h2>
+          </div>
+          <p>After Bali, the Balance Retreats world expands into desert, ocean and wild landscape experiences. These pages give your guests a glimpse of what is coming next.</p>
+        </div>
+        <div class="horizon-grid reveal">
+          <a class="horizon-card" href="abu-dhabi.html" style="--horizon-image:url('https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=1200&q=90')">
+            <small>Coming soon</small>
+            <h3>Abu Dhabi</h3>
+            <p>Golden architecture, desert stillness and a refined city reset.</p>
+            <span class="btn">Preview page</span>
+          </a>
+          <a class="horizon-card" href="maldives.html" style="--horizon-image:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1200&q=90')">
+            <small>Coming soon</small>
+            <h3>Maldives</h3>
+            <p>Clear water, quiet mornings and a softer island rhythm.</p>
+            <span class="btn">Preview page</span>
+          </a>
+          <a class="horizon-card" href="tanzania.html" style="--horizon-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=90')">
+            <small>Coming soon</small>
+            <h3>Tanzania</h3>
+            <p>Savannah, safari horizons and a more elemental kind of adventure.</p>
+            <span class="btn">Preview page</span>
+          </a>
         </div>
       </div>
     </section>
@@ -861,6 +925,7 @@
         <span>Balance Retreats</span>
       </a>
       <p>Bali · Abu Dhabi · Maldives · Tanzania</p>
+      <p><a href="abu-dhabi.html">Abu Dhabi</a> · <a href="maldives.html">Maldives</a> · <a href="tanzania.html">Tanzania</a></p>
       <p>info@balanceretreats.life</p>
     </div>
   </footer>
