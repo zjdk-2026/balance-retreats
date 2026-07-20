@@ -651,6 +651,358 @@
     @media(max-width:860px){.nav{padding-inline:4vw}.nav .brand span{max-width:210px;overflow:hidden;text-overflow:ellipsis}.hero{grid-template-columns:1fr}.hero-copy{margin:0 auto;text-align:center}.actions{justify-content:center}.numbers{padding:78px 5vw}.number-card{border-right:0;border-bottom:1px solid rgba(200,160,99,.22)}.number-card:last-child{border-bottom:0}.booking{padding-top:92px}.booking-head{display:grid}}
     @media(max-width:620px){.nav{position:sticky}.brand img{width:34px;height:34px}.nav .brand span{max-width:160px}.hero{padding-top:74px}.hero-copy{text-align:left;background:rgba(247,244,239,.84);border:1px solid rgba(200,160,99,.28)}.actions{justify-content:stretch}.carton{width:min(286px,86vw)}.carton-top,.cap{display:none}.carton-title span{letter-spacing:.32em}.wow-card,.moment{min-height:330px}.numbers-grid,.booking-cards,.horizon-grid{grid-template-columns:1fr}.horizon-card{min-height:340px}.day{grid-template-columns:1fr;gap:8px}.day small{display:block}.booking-head h2{font-size:clamp(3rem,17vw,4.2rem)}.price-card .btn{align-self:stretch}footer .brand span{max-width:none}}
 
+    /* Mobile editorial refinement */
+    @media (max-width: 620px) {
+      html { scroll-padding-top: 74px; }
+      body { overflow-x: hidden; }
+      .nav {
+        top: 0;
+        padding: 10px 4vw;
+        min-height: 72px;
+        background: rgba(247,244,239,.94);
+        backdrop-filter: blur(12px);
+      }
+      .brand {
+        gap: 10px;
+        min-width: 0;
+      }
+      .brand img {
+        width: 38px;
+        height: 38px;
+      }
+      .nav .brand span {
+        max-width: calc(100vw - 110px);
+        font-size: .7rem;
+        letter-spacing: .24em;
+      }
+      section {
+        padding: 74px 4vw;
+      }
+      .container {
+        width: 100%;
+      }
+      h1 {
+        font-size: clamp(3.45rem, 17vw, 4.85rem);
+        line-height: .88;
+      }
+      h2 {
+        font-size: clamp(3rem, 14vw, 4.35rem);
+        line-height: .9;
+        overflow-wrap: normal;
+      }
+      h3 {
+        line-height: 1;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.62;
+      }
+      .eyebrow {
+        font-size: .66rem;
+        line-height: 1.65;
+        letter-spacing: .24em;
+      }
+      .hero {
+        min-height: auto;
+        padding: 92px 4vw 42px;
+        background-position: 62% center;
+        gap: 28px;
+      }
+      .hero-copy {
+        padding: 22px 18px 0;
+        background: rgba(247,244,239,.88);
+      }
+      .hero-copy .eyebrow {
+        max-width: 96%;
+        letter-spacing: .19em;
+      }
+      .hero-copy p {
+        font-size: 1rem;
+        line-height: 1.58;
+      }
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 24px;
+      }
+      .btn {
+        width: 100%;
+        min-height: 58px;
+        justify-content: center;
+      }
+      .carton-wrap {
+        min-height: 380px;
+        padding-top: 10px;
+        overflow: hidden;
+      }
+      .carton {
+        width: min(294px, 84vw);
+        transform: rotate(-4deg);
+      }
+      .carton-panel {
+        padding: 22px 20px 24px;
+      }
+      .carton-mark {
+        width: 92px;
+        height: 92px;
+        margin: 8px auto 2px;
+      }
+      .carton-title {
+        font-size: clamp(2.5rem, 13vw, 3.35rem);
+        letter-spacing: .12em;
+      }
+      .carton-art {
+        height: 118px;
+      }
+      .carton-meta strong {
+        font-size: 1.35rem;
+      }
+      .hero::after {
+        position: static;
+        display: block;
+        order: 3;
+        margin: 8px -4vw -42px;
+        padding: 14px 4vw;
+        font-size: .68rem;
+        line-height: 1.6;
+        white-space: normal;
+      }
+      .wow-strip {
+        display: grid;
+      }
+      .wow-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .wow-card {
+        min-height: 430px;
+      }
+      .wow-card:first-child {
+        grid-column: auto;
+      }
+      .wow-copy {
+        left: 22px;
+        right: 22px;
+        bottom: 24px;
+      }
+      .wow-copy strong {
+        font-size: 2.05rem;
+        line-height: .98;
+      }
+      .maya-section {
+        padding-top: 74px;
+      }
+      .maya-grid {
+        gap: 38px;
+      }
+      .maya-photo {
+        min-height: 520px;
+        background-position: center 38%;
+        box-shadow: 0 18px 44px rgba(42,32,20,.12);
+      }
+      .photo-label {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        width: auto;
+        text-align: center;
+        font-size: .62rem;
+      }
+      .maya-quote {
+        font-size: clamp(2rem, 10vw, 2.85rem);
+        line-height: 1.2;
+      }
+      .hosts-section {
+        padding-top: 68px;
+      }
+      .hosts-section > .container > h2 {
+        font-size: clamp(3rem, 14vw, 4.1rem);
+      }
+      .hosts-grid {
+        gap: 24px;
+        margin-top: 30px;
+      }
+      .host-image {
+        min-height: 410px;
+      }
+      .host-maya .host-image {
+        background-position: center 36%;
+      }
+      .host-copy {
+        padding: 30px 28px 34px;
+      }
+      .host-copy h3 {
+        font-size: clamp(2.55rem, 12vw, 3.25rem);
+      }
+      .host-copy p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .numbers {
+        padding: 64px 4vw;
+      }
+      .numbers-grid {
+        gap: 0;
+        border-top-color: rgba(200,160,99,.42);
+      }
+      .number-card {
+        min-height: auto;
+        padding: 34px 10vw 34px 8vw;
+      }
+      .number-card strong {
+        font-size: 4rem;
+        line-height: .9;
+      }
+      .number-card span {
+        margin-top: 12px;
+        font-size: 1rem;
+      }
+      .inside {
+        padding-top: 72px;
+      }
+      .inside-layout {
+        gap: 34px;
+      }
+      .feature {
+        grid-template-columns: 42px 1fr;
+        padding: 22px 0;
+      }
+      .feature p {
+        margin-top: 6px;
+      }
+      .days h2 {
+        font-size: clamp(3rem, 14vw, 4.25rem);
+      }
+      .itinerary {
+        gap: 14px;
+      }
+      .day {
+        padding: 24px 20px;
+        min-height: 0;
+      }
+      .day h3 {
+        font-size: 1.8rem;
+      }
+      .day span {
+        font-size: .95rem;
+        line-height: 1.45;
+      }
+      .fun {
+        padding: 70px 4vw;
+      }
+      .fun-grid {
+        gap: 36px;
+      }
+      .fun-collage {
+        grid-template-columns: 1fr;
+      }
+      .fun-collage img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+      .fun-copy h2,
+      .moments h2,
+      .horizon-head h2,
+      .booking-head h2 {
+        font-size: clamp(3rem, 14vw, 4.15rem);
+      }
+      .moments {
+        padding-top: 72px;
+      }
+      .moment-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .moment {
+        min-height: auto;
+        aspect-ratio: 4 / 5;
+      }
+      .moment span {
+        font-size: 1.05rem;
+        bottom: 22px;
+      }
+      .horizon {
+        padding-top: 76px;
+      }
+      .horizon-head {
+        gap: 22px;
+        margin-bottom: 30px;
+      }
+      .horizon-head p {
+        font-size: 1rem;
+      }
+      .horizon-card {
+        min-height: 390px;
+        padding: 34px 26px;
+      }
+      .horizon-card h3 {
+        font-size: 3rem;
+      }
+      .horizon-card p {
+        font-size: 1rem;
+      }
+      .booking {
+        padding: 76px 4vw calc(92px + env(safe-area-inset-bottom));
+      }
+      .booking-head {
+        gap: 24px;
+        margin-bottom: 34px;
+      }
+      .booking-head p {
+        padding-top: 0;
+        font-size: 1rem;
+      }
+      .price-card {
+        min-height: 0;
+        padding: 32px 24px;
+      }
+      .price {
+        font-size: 3.3rem;
+      }
+      .price-card ul {
+        gap: 13px;
+      }
+      .price-card li {
+        font-size: .98rem;
+        line-height: 1.45;
+      }
+      footer {
+        padding: 38px 4vw calc(48px + env(safe-area-inset-bottom));
+      }
+      .footer-inner {
+        min-height: 0;
+        gap: 18px;
+      }
+      .footer-inner p {
+        line-height: 1.7;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .nav .brand span {
+        max-width: 220px;
+        font-size: .64rem;
+        letter-spacing: .2em;
+      }
+      h1 {
+        font-size: clamp(3.05rem, 16vw, 4.1rem);
+      }
+      h2,
+      .fun-copy h2,
+      .moments h2,
+      .horizon-head h2,
+      .booking-head h2 {
+        font-size: clamp(2.75rem, 13vw, 3.7rem);
+      }
+      .hero-copy .eyebrow {
+        letter-spacing: .14em;
+      }
+      .host-copy {
+        padding-inline: 24px;
+      }
+    }
+
   </style>
 </head>
 <body>
